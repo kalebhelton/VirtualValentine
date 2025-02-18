@@ -1,0 +1,267 @@
+/* THIS IS THE STYLEING + ACTIONS OF MY VIRTUAL VALENTINES DAY CARD HTML FILE */
+
+body{  /* this references the "body" tag in the HTML code */
+  background-color: #EBC6D4;  /* this is the background color to the entire website */
+}
+
+.envelope-wrapper{
+  height: 400px;
+}
+
+#envelope{
+  position: relative;  /* position should be relative to the "envelope-wrapper" in the HTML code */ 
+  height: 250px;
+  width: 350px;
+
+  /* creating curved edging around the webpage */
+
+  border-bottom-left-radius: 10px;  /* radius = how curved an edge is */
+  border-bottom-right-radius: 10px;
+
+  /* to center the object -> have the left and right margins be auto */
+  /* this means that both margins are pusing in the object equally; thus, having the object be center */
+
+  margin-left: auto;
+  margin-right: auto;
+
+  top: 65%;  /* moves the object 50% of the way down the "envelope-wrapper" object */
+
+  background-color: #FF6863;  /* background color of the actual envelope */
+  box-shadow: 0 4px 20px rgb(94, 54, 54);  /* box-shadow = the shadow behind the "div" object in HTML */
+}
+
+#envelope:hover{  /* creates a clickable function to the envelope object in the final website */
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+.front{  /* actions of the "front flap" in the HTML file */
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;  /* z-index: defines the order of overlapping HTML elements */
+}
+
+.flap{  /* the 'flaps' of the envelope all around the letter */
+  border-top: 135px solid #FF6863;
+  border-left: 175px solid transparent;
+  border-right: 175px solid transparent;
+  border-bottom: 125px solid transparent;
+  transform-origin: top;
+}
+
+.pocket{  /* creates the location of the letter w/in the envelope */
+  border-left: 175px solid #FF8BA0;
+  border-right: 175px solid #FF8BA0;
+  border-bottom: 150px solid #FFA8B5;
+  border-top: 100px solid transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.letter{  /* styling of the letter w/in the envelope */
+  position: relative;
+  background-color: white;
+  width: 95%;
+  height: 95%;
+  top: 5%;
+  border-radius: 10px;  /* border-radius = used to define all the radiuses of the object @ once */
+  box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+}
+
+.letter:after{
+  content: "";  /* content does nothing after it is initiated */
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.word{
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 14%;
+  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-size: 20px;
+  color: black;
+}
+
+.Line1{
+  top: 5%;
+}
+
+.Line2{
+  top: 20%;
+}
+
+.Line3{
+  top: 45%;
+}
+
+.Line4{
+  top: 69%;
+  text-align: right;
+}
+
+.Line5{
+  top: 78%;
+  text-align: right;
+}
+
+.open .flap{
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap{
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 1s;
+  z-index: 5;
+}
+
+.open .letter{
+  transform: translateY(-200px);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter{
+  transform: translateY(0deg);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+.hearts{
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart{
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.heart:before, .heart:after{
+  position: absolute;
+  content: "";
+  background: #D00000;
+  width: 50px;
+  height: 80px;
+  left: 50px;
+  top: 0;
+  border-radius: 50px 50px 0 0;
+
+  /* creating heart shapes in CSS -> a rectangle and two circles to create a heart */
+
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after{
+
+  /* creating heart shapes in CSS (cont.) */
+
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart{
+  opacity: 0;
+  animation: none;
+}
+
+/* animations for the heart objects */
+
+.A1{
+  left: 20%;
+  transform: scale(0.6);
+  opacity: 1;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 2 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+.A2{
+  left: 55%;
+  transform: scale(1);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+.A3{
+  left: 10%;
+  transform: scale(0.8);
+  opacity: 1;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+.A4{
+  left: 25%;
+  transform: scale(0.7);
+  opacity: 1;
+  animation: slideUp 3s linear 1, sideSway 4s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+.A5{
+  left: 30%;
+  transform: scale(0.5);
+  opacity: 1;
+  animation: slideUp 6s linear 1, sideSway 3s ease-in-out 5 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+.A6{
+  left: 15%;
+  transform: scale(0.9);
+  opacity: 1;
+  animation: slideUp 5s linear 1, sideSway 2s ease-in-out 7 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+}
+
+.A7{
+  left: 45%;
+  transform: scale(0.4);
+  opacity: 1;
+  animation: slideUp 3s linear 1, sideSway 4s ease-in-out 5 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+/* defining functions w/in CSS */
+
+@keyframes slideUp{  /* function animates the hearts to move up when the letter is opened */
+  0%{
+      top: 0px;
+  }
+
+  100%{
+      top: -600px;
+  }
+}
+
+@keyframes sideSway{  /* function animates the hearts to move side-to-side when the letter is opened */
+  0%{
+      margin-left: 0px;
+  }
+
+  100%{
+      margin-left: 50px;
+  }
+}
