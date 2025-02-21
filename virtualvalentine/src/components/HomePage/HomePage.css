@@ -1,0 +1,41 @@
+body{
+    background-color: #EBC6D4;
+}
+
+.title-wrapper{
+    position: relative;
+    margin: 30px auto;
+    background-color: transparent;
+    width: 70%;
+    height: 45px;
+}
+
+.title{
+    position: relative;
+    margin: 35% auto;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    
+}
+
+.page-wrapper{
+    position: relative;
+    margin: -40% auto;
+    background-color: pink;
+    max-height: 30%;
+    width: 80%;
+}
+
+.heartsGif1{
+    display: block;
+    margin: 35% 85%;  /* margin: top right bottom left */
+    background-color: white;
+}
+
+.heartsGif2{
+    display: block;
+    margin: -15% -5px;  /* margin: top right bottom left */
+    background-color: transparent;
+}
