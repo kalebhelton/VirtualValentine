@@ -1,13 +1,23 @@
 import React from "react";
+import { useNavigate} from "react-router-dom";
 import Gif from "../Images/Hearts.gif"
 import "./HomePage.css";
 
 function Title(){
     return(
-        <div className = "title-wrapper">
-            <p className = "title">
-                Happy Valentine's Day
-            </p>
+        <p className = "title">
+            Happy Valentine's Day
+        </p>
+    );
+}
+
+function Button(){
+    const navigate = useNavigate();
+    return(
+        <div className = "button-wrapper">
+            <button onClick = {() => navigate("/question")} className = "button">
+                Start Here
+            </button>
         </div>
     );
 }
@@ -15,19 +25,22 @@ function Title(){
 function Page(){
     return(
         <div className = "page-wrapper">
-            <img 
-                src = {Gif} 
-                alt = "Hearts"
-                className = "heartsGif1"
-            />
-            <Title />
-            <img 
-                src = {Gif} 
-                alt = "Hearts"
-                className = "heartsGif2"
-            />
+            <div className = "title-wrapper">
+                <img 
+                    src = {Gif} 
+                    alt = "Hearts"
+                    className = "heartsGif"
+                />
+                <Title />
+                <img 
+                    src = {Gif} 
+                    alt = "Hearts"
+                    className = "heartsGif"
+                />
+            </div>
+            <Button />
         </div>
-    )
+    );
 }
 
 function HomePage(){

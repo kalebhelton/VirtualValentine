@@ -1,0 +1,50 @@
+.menu-container {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+  }
+  
+  .menu-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .menu-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 12px 20px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.2s ease;
+  }
+  
+  .menu a:hover {
+    color: #E91E63;
+  }
+  

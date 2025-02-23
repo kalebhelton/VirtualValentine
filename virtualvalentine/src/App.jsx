@@ -6,30 +6,32 @@ import LetterPage from "./components/LetterPage/LetterPage";
 import YesPage from "./components/YesPage/YesPage";
 import NoPage from "./components/NoPage/NoPage";
 import SpotifyPage from "./components/SpotifyPage/SpotifyPage";
+import Menu from "./components/Menu/Menu";
 
 function App(){
     return(
         <Router>
-            <Routes>
-                <Route 
-                    path = "/"
-                    element = {<HomePage />} />
-                <Route
-                    path = "/question"
-                    element = {<QuestionPage />} />                    
-                <Route 
-                    path = "/letter"
-                    element = {<LetterPage />} />
-                <Route 
-                    path = "/yes"
-                    element = {<YesPage />} />
-                    <Route
-                        path = "/no"
-                        element = {<NoPage />} />
+            <Menu />
+                <Routes>
                     <Route 
-                        path = "/spotify"
-                        element = {<SpotifyPage />} />
-            </Routes>
+                        path = "/"
+                        element = {<HomePage />} />
+                    <Route
+                        path = "/question"
+                        element = {<QuestionPage />} />                    
+                    <Route 
+                        path = "/letter"
+                        element = {<LetterPage />} />
+                    <Route 
+                        path = "/yes"
+                        element = {<YesPage />} />
+                        <Route
+                            path = "/no"
+                            element = {<NoPage />} />
+                        <Route 
+                            path = "/spotify"
+                            element = {<SpotifyPage />} />
+                </Routes>
         </Router>
     );
 }; export default App;

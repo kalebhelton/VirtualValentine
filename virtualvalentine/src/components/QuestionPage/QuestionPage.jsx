@@ -16,9 +16,13 @@ function Question(){
 function Buttons(){
     const navigate = useNavigate();
     return(
-        <div className = "buttons">
-            <button onClick = {() => navigate("/YesPage")}>Yes</button>
-            <button onClick = {() => navigate("/NoPage")}>No</button>
+        <div className = "button-wrapper">
+            <button onClick = {() => navigate("/yes")} className = "button">
+                Yes
+            </button>
+            <button onClick = {() => navigate("/no")} className = "button">
+                No
+            </button>
         </div>
     );
 }

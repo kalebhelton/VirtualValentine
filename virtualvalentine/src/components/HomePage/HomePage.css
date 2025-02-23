@@ -1,41 +1,64 @@
-body{
+body {
     background-color: #EBC6D4;
-}
-
-.title-wrapper{
-    position: relative;
-    margin: 30px auto;
-    background-color: transparent;
-    width: 70%;
-    height: 45px;
-}
-
-.title{
-    position: relative;
-    margin: 35% auto;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 40px;
-    color: black;
-    text-align: center;
-    
-}
-
-.page-wrapper{
-    position: relative;
-    margin: -40% auto;
-    background-color: pink;
-    max-height: 30%;
+  }
+  
+  .page-wrapper{
     width: 80%;
-}
-
-.heartsGif1{
-    display: block;
-    margin: 35% 85%;  /* margin: top right bottom left */
+    margin: 10% auto;
+    text-align: center;
+  }
+  
+  /* --- Title and Hearts Layout --- */
+  .title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
-}
-
-.heartsGif2{
-    display: block;
-    margin: -15% -5px;  /* margin: top right bottom left */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(1.5rem, 2vw + 1rem, 4rem);
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    margin: 0 1rem;
+    flex: 1; /* Allows the title to grow between the hearts */
+    text-align: center;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+  }
+  
+  .heartsGif{
+    height: 12vh; /* Scales with viewport height */
+    width: auto;
+    flex-shrink: 0; /* Prevents hearts from shrinking */
+  }
+  
+  /* --- Button Centering --- */
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Provides spacing from the title */
+  }
+  
+  .button {
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: 2px solid #FF6863;
+    border-radius: 4px;
     background-color: transparent;
-}
+    color: #FF6863;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    margin: 10px;
+  }
+  
+  .button:hover {
+    color: white;
+    transform: scale(0.95);
+    background-color: #FF6863;
+  }

@@ -1,5 +1,7 @@
-import {useState, React} from "react";
+import {useState, useEffect, React} from "react";
+import {useNavigate} from "react-router-dom";
 import "./LetterPage.css";
+
 
 function Hearts(){
     return(
@@ -40,14 +42,14 @@ function Letter(){
 function Envelope() {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="envelope-wrapper">
+        <div className = " envelope-wrapper">
             <div
-                id="envelope"
-                className={isOpen ? "open" : "close"}
-                onClick={() => setIsOpen(!isOpen)}
+                id = "envelope"
+                className = {isOpen ? "open" : "close"}
+                onClick = {() => setIsOpen(!isOpen)}
             >
-                <div className="front flap"></div>
-                <div className="front pocket"></div>
+                <div className = "front flap"></div>
+                <div className = "front pocket"></div>
                 <Letter />
                 <Hearts />
             </div>
@@ -55,10 +57,46 @@ function Envelope() {
     );
 }
 
+function GifSequence(){
+    const[currentStep, setCurrentStep] = useState(1);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const timers = [];
+
+        timers.push(setTimeout(() => setCurrentStep(2), 10000));
+        return () => timers.forEach(clearTimeout);
+    }, []);
+
+    return(
+        <div className = "sequence-container">
+            {currentStep === 1
+            &&
+            (
+                <Envelope />
+            )}
+            {currentStep === 2
+            &&
+            (
+                <div className = "text1-wrapper">
+                    <p className = "text1">
+                        Here's Some Tunes That Make Me Think Of You
+                    </p>
+                    <div className = "button-wrapper">
+                        <button onClick = {() => navigate("/spotify")} className = "button">
+                            S.A.L.: Songs Abt Love
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
 function LetterPage() {
     return (
-        <div className="letter-page">
-            <Envelope />
+        <div className = "letter-page">
+            <GifSequence />
         </div>
     );
 } export default LetterPage;
