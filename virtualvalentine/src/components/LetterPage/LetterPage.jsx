@@ -1,4 +1,4 @@
-import {useState, useEffect, React} from "react";
+import {useState, React} from "react";
 import {useNavigate} from "react-router-dom";
 import "./LetterPage.css";
 
@@ -27,7 +27,7 @@ function Letter(){
                 You're the STAR that brightens my day!
             </p>
             <p className = "word Line3">
-                Make my day brighter by saying you'll be mine?
+                Let me make your heart sing with songs that remind me of you!
             </p>
             <p className = "word Line4">
                 Yours,
@@ -41,6 +41,7 @@ function Letter(){
 
 function Envelope() {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
     return (
         <div className = " envelope-wrapper">
             <div
@@ -52,43 +53,12 @@ function Envelope() {
                 <div className = "front pocket"></div>
                 <Letter />
                 <Hearts />
-            </div>
-        </div>
-    );
-}
-
-function GifSequence(){
-    const[currentStep, setCurrentStep] = useState(1);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        const timers = [];
-
-        timers.push(setTimeout(() => setCurrentStep(2), 10000));
-        return () => timers.forEach(clearTimeout);
-    }, []);
-
-    return(
-        <div className = "sequence-container">
-            {currentStep === 1
-            &&
-            (
-                <Envelope />
-            )}
-            {currentStep === 2
-            &&
-            (
-                <div className = "text1-wrapper">
-                    <p className = "text1">
-                        Here's Some Tunes That Make Me Think Of You
-                    </p>
-                    <div className = "button-wrapper">
-                        <button onClick = {() => navigate("/spotify")} className = "button">
-                            S.A.L.: Songs Abt Love
-                        </button>
-                    </div>
+                <div className = "button-wrapper">
+                    <button onClick = {() => navigate("/spotify")} className = "button">
+                        S.A.L.: Songs Abt Love
+                    </button>
                 </div>
-            )}
+            </div>
         </div>
     );
 }
@@ -96,7 +66,7 @@ function GifSequence(){
 function LetterPage() {
     return (
         <div className = "letter-page">
-            <GifSequence />
+            <Envelope />
         </div>
     );
 } export default LetterPage;

@@ -3,45 +3,50 @@ body{
 }
 
 .button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem; /* Provides spacing from the title */
+  display: flex;
+  justify-content: center;
+  top: 55%;
 }
-  
+
 .button {
-    font-weight: 800;
-    font-size: 1.5rem;
-    font-style: normal;
-    text-transform: uppercase;
-    padding: 10px;
-    border: 2px solid #FF6863;
-    border-radius: 4px;
-    background-color: transparent;
-    color: #FF6863;
-    cursor: pointer;
-    transition: all 0.1s linear;
-    display: inline-block;
-    margin: 30% auto 0 auto;
-    line-height: 2em;
-    text-decoration: none;
-    min-width: 150px;
-    outline: none;
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-style: normal;
+  text-transform: uppercase;
+  border: 2px solid #FF6863;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #FF6863;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  display: inline-block;
+  margin: 0px;
+  line-height: 2em;
+  text-decoration: none;
+  min-width: 10%;
+  outline: none;
 }
 
 .button:hover {
-    color: white;
-    transform: scale(0.95);
-    background-color: #FF6863;
+  color: white;
+  transform: scale(0.95);
+  background-color: #FF6863;
 }
 
-.Gif{
+.gif-wrapper{
+    position: flex;
+    margin: auto;
+}
+
+.Image{
     display: block;
-    margin: -55px auto 0 auto;  /* margin: top left back right */
+    margin: auto;  /* margin: top left back right */
     background-color: transparent;
 }
 
 #page{
     position: relative;
+    margin: auto;
 }
 
 .page-wrapper{
